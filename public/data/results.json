@@ -1,0 +1,67 @@
+{
+  "dataVersion": 1,
+  "results": [
+    {
+      "id": "res_001",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "interviewId": "int_001",
+      "type": "university",
+      "typeLabel": "University Admission Interview",
+      "interviewDate": "2025-01-10",
+      "totalScore": 82,
+      "maxScore": 100,
+      "percentage": 82,
+      "grade": "B+",
+      "status": "published",
+      "overallFeedback": "Excellent command of the subject area. Showed strong motivation for studying in the Netherlands. Communication was clear and confident.",
+      "recommendations": [
+        "Strengthen knowledge of Dutch higher education system",
+        "Prepare more specific examples of academic achievements",
+        "Research the university's specific programme structure"
+      ],
+      "publishedAt": "2025-01-12T09:00:00.000Z",
+      "createdAt": "2025-01-11T15:00:00.000Z"
+    },
+    {
+      "id": "res_002",
+      "userId": "usr_002",
+      "isoCode": "BPN-2024-NL-0002",
+      "interviewId": "int_003",
+      "type": "embassy",
+      "typeLabel": "Embassy Interview",
+      "interviewDate": "2025-01-30",
+      "totalScore": 75,
+      "maxScore": 100,
+      "percentage": 75,
+      "grade": "B",
+      "status": "published",
+      "overallFeedback": "Good overall performance. Demonstrated clear study intentions. Some areas of visa knowledge could be improved.",
+      "recommendations": [
+        "Review Netherlands visa requirements thoroughly",
+        "Prepare detailed financial documents",
+        "Practice explaining study motivation clearly"
+      ],
+      "publishedAt": "2025-02-01T10:00:00.000Z",
+      "createdAt": "2025-01-31T14:00:00.000Z"
+    },
+    {
+      "id": "res_003",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "interviewId": "int_002",
+      "type": "ind",
+      "typeLabel": "IND Interview",
+      "interviewDate": "2025-01-20",
+      "totalScore": 88,
+      "maxScore": 100,
+      "percentage": 88,
+      "grade": "A",
+      "status": "draft",
+      "overallFeedback": "Outstanding knowledge of IND requirements.",
+      "recommendations": [],
+      "publishedAt": null,
+      "createdAt": "2025-01-21T10:00:00.000Z"
+    }
+  ]
+}

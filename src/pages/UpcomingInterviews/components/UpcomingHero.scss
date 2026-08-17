@@ -1,0 +1,193 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.uh {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ececec;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      rgba(10, 20, 40, 0.9) 0%,
+      rgba(10, 20, 40, 0.75) 50%,
+      rgba(10, 20, 40, 0.4) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    color: #ffffff;
+    max-width: 600px;
+
+    @media (max-width: 640px) { padding: 1.75rem 1.5rem; }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  &__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 4px rgba(232, 130, 12, 0.25);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+
+    em { font-style: italic; color: #f3c896; }
+  }
+
+  &__lede {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    margin: 0 0 1.5rem 0;
+    max-width: 480px;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  &__stat {
+    &-num {
+      font-family: $font-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+    &-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  
+&__countdown {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  z-index: 3;
+  background: rgba(255,255,255,0.98);
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  min-width: 300px;
+
+  // Increased from 900 to 1024 so countdown moves out of the hero earlier
+  @media (max-width: 1024px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: -1rem 1.5rem 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    margin: -1rem 1rem 1rem;
+    min-width: 0;
+    padding: 0.875rem 1rem;
+  }
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    &-label {
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #8a8578;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    &-type {
+      font-size: 0.6875rem;
+      color: #1a3a6b;
+      font-weight: 600;
+      text-align: right;
+
+      @media (max-width: 480px) { display: none; }
+    }
+
+    &-values {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    &-block {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+
+      &--seconds {
+        opacity: 0.6;
+      }
+    }
+
+    &-num {
+      font-family: $font-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #1a3a6b;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    &-unit {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: #6a6a6a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+}

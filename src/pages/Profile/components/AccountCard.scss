@@ -1,0 +1,207 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.acc-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  padding: 1.75rem;
+
+  @media (max-width: 640px) { padding: 1.5rem 1.25rem; }
+
+  &__header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &__eyebrow {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  // Meta list
+  &__meta {
+    margin: 0 0 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ececec;
+
+    &:last-child { border-bottom: none; }
+
+    dt {
+      font-size: 0.75rem;
+      color: #8a8578;
+      font-weight: 500;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    dd {
+      font-size: 0.8125rem;
+      color: #1a1a2e;
+      font-weight: 600;
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  &__meta-mono {
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  // Actions
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__action {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    background: #faf8f3;
+    border: 1px solid #e8e5dc;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: left;
+    cursor: pointer;
+    transition: all 150ms ease;
+    width: 100%;
+
+    &:hover {
+      border-color: #1a3a6b;
+      background: #ffffff;
+
+      .acc-card__action-arrow {
+        color: #1a3a6b;
+        transform: translateX(3px);
+      }
+    }
+
+    &--danger {
+      &:hover {
+        border-color: #ae1c28;
+
+        .acc-card__action-icon--danger {
+          background: #ae1c28;
+          color: #ffffff;
+        }
+
+        .acc-card__action-title {
+          color: #ae1c28;
+        }
+
+        .acc-card__action-arrow {
+          color: #ae1c28;
+        }
+      }
+    }
+  }
+
+  &__action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e8e5dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 150ms ease;
+
+    i {
+      font-size: 1.125rem;
+      color: #1a3a6b;
+    }
+
+    &--danger i {
+      color: #ae1c28;
+    }
+  }
+
+  &__action-body {
+    min-width: 0;
+  }
+
+  &__action-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 2px;
+    transition: color 150ms ease;
+  }
+
+  &__action-desc {
+    font-size: 0.6875rem;
+    color: #8a8578;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &__action-arrow {
+    font-size: 1.125rem;
+    color: #b0a99a;
+    transition: all 200ms ease;
+    flex-shrink: 0;
+  }
+}
+
+// ─── Status pill ───────────────────────────────────────────────────────────
+
+.acc-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 1.25rem;
+
+  > i {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  > div {
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 2px;
+    opacity: 0.8;
+  }
+
+  &__value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+}

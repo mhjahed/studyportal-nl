@@ -1,0 +1,16 @@
+{
+  "dataVersion": 1,
+  "defaultSettings": {
+    "notifications": {
+      "interviewScheduled": true,
+      "interviewReminder": true,
+      "resultPublished": true,
+      "scorecardPublished": true,
+      "documentReminder": true,
+      "studyUpdates": true,
+      "systemAnnouncements": true
+    },
+    "timezone": "Europe/Amsterdam",
+    "language": "en"
+  }
+}

@@ -1,0 +1,195 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 350ms ease;
+
+  &--enter {
+    opacity: 0;
+  }
+
+  &--hold {
+    opacity: 1;
+  }
+
+  &--exit {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__inner {
+    text-align: center;
+    max-width: 480px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1) 150ms,
+                opacity 600ms ease 150ms;
+  }
+
+  &--hold &__inner {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  // Portrait
+  &__portrait-wrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+  }
+
+  &__portrait {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
+    background: #f5f3ee;
+    box-shadow: 0 8px 24px rgba(26, 58, 107, 0.15);
+  }
+
+  &__portrait-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(26, 58, 107, 0.25);
+    animation: welcome-ring 2s ease-out infinite;
+
+    &--delay {
+      animation-delay: 0.8s;
+    }
+  }
+
+  @keyframes welcome-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+
+  // Text
+  &__greeting {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #8a8578;
+    margin-bottom: 0.75rem;
+  }
+
+  &__name {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 0 0 1.75rem 0;
+
+    em {
+      font-style: italic;
+      color: #1a3a6b;
+      font-weight: 400;
+    }
+  }
+
+  // Meta
+  &__meta {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background: #faf8f3;
+    border: 1px solid #e8e5dc;
+    margin-bottom: 2rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+    }
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+  }
+
+  &__meta-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a8578;
+  }
+
+  &__meta-value {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  &__meta-item:nth-child(3) &__meta-value {
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  &__divider {
+    width: 1px;
+    background: #d8d4c8;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  // Loader
+  &__loader {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  &__loader-track {
+    height: 2px;
+    background: #ececec;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+  }
+
+  &__loader-fill {
+    height: 100%;
+    background: #1a3a6b;
+    width: 0;
+    animation: welcome-load 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 200ms;
+  }
+
+  @keyframes welcome-load {
+    0% { width: 0; }
+    30% { width: 40%; }
+    70% { width: 75%; }
+    100% { width: 100%; }
+  }
+
+  &__loader-text {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8a8578;
+    font-weight: 600;
+  }
+}

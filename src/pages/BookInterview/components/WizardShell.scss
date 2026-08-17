@@ -1,0 +1,13 @@
+.wizard {
+  max-width: 780px;
+
+  &__content {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    padding: 2rem;
+
+    @media (max-width: 480px) {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+}

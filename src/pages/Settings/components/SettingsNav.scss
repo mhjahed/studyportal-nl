@@ -1,0 +1,131 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.s-nav {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  padding: 1.25rem 1rem;
+  position: sticky;
+  top: 84px;
+
+  @media (max-width: 1023px) {
+    position: static;
+  }
+
+  &__label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #8a8578;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+&__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  @media (max-width: 1023px) {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;  // ← add
+    padding-bottom: 4px;             // ← add so scrollbar doesn't cut off
+
+    &::-webkit-scrollbar { height: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+      background: #d8d4c8;
+      border-radius: 2px;
+    }
+
+    li {
+      scroll-snap-align: start;      // ← add
+    }
+  }
+}
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    color: #4a4a4a;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 150ms ease;
+    position: relative;
+
+    @media (max-width: 1023px) {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    &:hover:not(&--active) {
+      background: #faf8f3;
+      color: #1a1a2e;
+
+      .s-nav__num, i { color: #1a3a6b; }
+    }
+
+    &--active {
+      background: #1a3a6b;
+      color: #ffffff;
+      font-weight: 600;
+
+      .s-nav__num { color: #f3c896; }
+      i { color: #ffffff; }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: #e8820c;
+
+        @media (max-width: 1023px) {
+          top: auto;
+          left: 8px;
+          right: 8px;
+          bottom: 0;
+          width: auto;
+          height: 2px;
+        }
+      }
+    }
+  }
+
+  &__num {
+    font-family: $font-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #b0a99a;
+    font-variant-numeric: tabular-nums;
+    min-width: 20px;
+    transition: color 150ms ease;
+  }
+
+  &__link i {
+    font-size: 1.125rem;
+    color: #8a8a8a;
+    transition: color 150ms ease;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+  }
+}

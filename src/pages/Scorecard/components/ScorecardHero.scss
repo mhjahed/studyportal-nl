@@ -1,0 +1,116 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.sh {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ececec;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      rgba(10, 20, 40, 0.9) 0%,
+      rgba(10, 20, 40, 0.75) 50%,
+      rgba(10, 20, 40, 0.35) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    color: #ffffff;
+    max-width: 620px;
+
+    @media (max-width: 640px) { padding: 1.75rem 1.5rem; }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  &__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 4px rgba(232, 130, 12, 0.25);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+
+    em { font-style: italic; color: #f3c896; }
+  }
+
+  &__lede {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    margin: 0 0 1.5rem 0;
+    max-width: 500px;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    @media (max-width: 480px) { gap: 1.25rem; }
+  }
+
+  &__stat {
+    &-num {
+      font-family: $font-serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-variant-numeric: tabular-nums;
+
+      span {
+        font-size: 0.875rem;
+        color: rgba(255,255,255,0.65);
+        font-weight: 500;
+        margin-left: 2px;
+      }
+    }
+    &-label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.35;
+    }
+  }
+}

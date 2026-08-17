@@ -1,0 +1,121 @@
+.docs-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  &__left {
+    min-width: 0;
+  }
+
+  &__count {
+    font-size: 0.8125rem;
+    color: #6a6a6a;
+    font-weight: 500;
+
+    strong {
+      color: #1a1a2e;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    &-sep {
+      color: #d8d4c8;
+      margin: 0 6px;
+    }
+
+    &-cat {
+      color: #1a3a6b;
+      font-weight: 600;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    @media (max-width: 640px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__filter-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #8a8578;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  &__filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid #e8e5dc;
+    color: #6a6a6a;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms ease;
+
+    i {
+      font-size: 0.9375rem;
+    }
+
+    &:hover:not(&--active) {
+      border-color: #1a3a6b;
+      color: #1a3a6b;
+    }
+
+    &--active {
+      background: #1a3a6b;
+      border-color: #1a3a6b;
+      color: #ffffff;
+      font-weight: 600;
+
+      &.docs-toolbar__filter--ready {
+        background: #1d7a47;
+        border-color: #1d7a47;
+      }
+
+      &.docs-toolbar__filter--preparing {
+        background: #e8820c;
+        border-color: #e8820c;
+      }
+
+      &.docs-toolbar__filter--not_started {
+        background: #6a6a6a;
+        border-color: #6a6a6a;
+      }
+
+      &.docs-toolbar__filter--not_applicable {
+        background: #b0a99a;
+        border-color: #b0a99a;
+      }
+    }
+  }
+}

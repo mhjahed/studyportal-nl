@@ -1,0 +1,59 @@
+{
+  "dataVersion": 1,
+  "interviews": [
+    {
+      "id": "int_001",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "type": "university",
+      "typeLabel": "University Admission Interview",
+      "university": "University of Amsterdam",
+      "course": "International Business Administration",
+      "date": "2025-02-15",
+      "time": "14:00",
+      "timezone": "Europe/Amsterdam",
+      "duration": 45,
+      "meetLink": "https://meet.google.com/abc-defg-hij",
+      "status": "upcoming",
+      "instructions": "Please ensure you have a stable internet connection. Have your passport and offer letter ready. Join 5 minutes before the scheduled time.",
+      "interviewerName": "Dr. Van der Berg",
+      "createdAt": "2025-01-20T09:00:00.000Z"
+    },
+    {
+      "id": "int_002",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "type": "ind",
+      "typeLabel": "IND Interview",
+      "university": "University of Amsterdam",
+      "course": "International Business Administration",
+      "date": "2025-03-10",
+      "time": "10:30",
+      "timezone": "Europe/Amsterdam",
+      "duration": 30,
+      "meetLink": "https://meet.google.com/klm-nopq-rst",
+      "status": "upcoming",
+      "instructions": "Prepare all IND documents. Have your tuition fee receipts and block money evidence ready.",
+      "interviewerName": "IND Officer",
+      "createdAt": "2025-01-25T11:00:00.000Z"
+    },
+    {
+      "id": "int_003",
+      "userId": "usr_002",
+      "isoCode": "BPN-2024-NL-0002",
+      "type": "embassy",
+      "typeLabel": "Embassy Interview",
+      "university": "Delft University of Technology",
+      "course": "Computer Science and Engineering",
+      "date": "2025-01-30",
+      "time": "09:00",
+      "timezone": "Europe/Amsterdam",
+      "duration": 20,
+      "meetLink": "https://meet.google.com/uvw-xyza-bcd",
+      "status": "completed",
+      "instructions": "Have all embassy documents prepared and organized.",
+      "interviewerName": "Embassy Coordinator",
+      "createdAt": "2025-01-10T14:00:00.000Z"
+    }
+  ]
+}

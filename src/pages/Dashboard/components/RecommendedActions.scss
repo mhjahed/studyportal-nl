@@ -1,0 +1,121 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.actions-card {
+  .actions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.action-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #faf8f3;
+  border: 1px solid #e8e5dc;
+  transition: all 150ms ease;
+
+  &:hover {
+    border-color: #1a3a6b;
+    background: #ffffff;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: auto auto 1fr;
+    gap: 0.75rem;
+  }
+
+  &__number {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #b0a99a;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e8e5dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.125rem;
+      color: #1a3a6b;
+    }
+  }
+
+  &__body {
+    min-width: 0;
+
+    @media (max-width: 640px) {
+      grid-column: 1 / -1;
+      order: 3;
+    }
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.35;
+    margin-bottom: 3px;
+  }
+
+  &__desc {
+    font-size: 0.75rem;
+    color: #6a6a6a;
+    line-height: 1.5;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a3a6b;
+    text-decoration: none;
+    padding: 0.5rem 0.875rem;
+    background: #ffffff;
+    border: 1px solid #d8d4c8;
+    white-space: nowrap;
+    transition: all 150ms ease;
+
+    i {
+      font-size: 1rem;
+      transition: transform 200ms ease;
+    }
+
+    &:hover {
+      background: #1a3a6b;
+      color: #ffffff;
+      border-color: #1a3a6b;
+
+      i { transform: translateX(3px); }
+    }
+
+    @media (max-width: 640px) {
+      grid-column: 1 / -1;
+      order: 4;
+      justify-self: start;
+    }
+  }
+
+  // Priority accents
+  &--high { border-left: 3px solid #ae1c28; }
+  &--medium { border-left: 3px solid #e8820c; }
+  &--low { border-left: 3px solid #d8d4c8; }
+}

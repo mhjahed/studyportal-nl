@@ -1,0 +1,77 @@
+{
+  "dataVersion": 1,
+  "universities": [
+    {
+      "id": "uni_001",
+      "name": "University of Amsterdam",
+      "shortName": "UvA",
+      "city": "Amsterdam",
+      "website": "https://www.uva.nl",
+      "type": "Research University",
+      "ranking": "Top 100 Global"
+    },
+    {
+      "id": "uni_002",
+      "name": "Delft University of Technology",
+      "shortName": "TU Delft",
+      "city": "Delft",
+      "website": "https://www.tudelft.nl",
+      "type": "Technical University",
+      "ranking": "Top 50 Global (Engineering)"
+    },
+    {
+      "id": "uni_003",
+      "name": "Erasmus University Rotterdam",
+      "shortName": "EUR",
+      "city": "Rotterdam",
+      "website": "https://www.eur.nl",
+      "type": "Research University",
+      "ranking": "Top 150 Global"
+    },
+    {
+      "id": "uni_004",
+      "name": "Utrecht University",
+      "shortName": "UU",
+      "city": "Utrecht",
+      "website": "https://www.uu.nl",
+      "type": "Research University",
+      "ranking": "Top 100 Global"
+    },
+    {
+      "id": "uni_005",
+      "name": "Leiden University",
+      "shortName": "UL",
+      "city": "Leiden",
+      "website": "https://www.universiteitleiden.nl",
+      "type": "Research University",
+      "ranking": "Top 150 Global"
+    },
+    {
+      "id": "uni_006",
+      "name": "Vrije Universiteit Amsterdam",
+      "shortName": "VU",
+      "city": "Amsterdam",
+      "website": "https://www.vu.nl",
+      "type": "Research University",
+      "ranking": "Top 200 Global"
+    },
+    {
+      "id": "uni_007",
+      "name": "University of Groningen",
+      "shortName": "RUG",
+      "city": "Groningen",
+      "website": "https://www.rug.nl",
+      "type": "Research University",
+      "ranking": "Top 150 Global"
+    },
+    {
+      "id": "uni_008",
+      "name": "Maastricht University",
+      "shortName": "UM",
+      "city": "Maastricht",
+      "website": "https://www.maastrichtuniversity.nl",
+      "type": "Research University",
+      "ranking": "Top 250 Global"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "dataVersion": 1,
+  "categories": [
+    { "id": "visa_updates", "label": "Visa Updates", "slug": "visa-updates" },
+    { "id": "university_admission", "label": "University Admission", "slug": "university-admission" },
+    { "id": "ind", "label": "IND Process", "slug": "ind-process" },
+    { "id": "embassy", "label": "Embassy Interview", "slug": "embassy-interview" },
+    { "id": "netherlands_news", "label": "Netherlands News", "slug": "netherlands-news" },
+    { "id": "student_life", "label": "Student Life", "slug": "student-life" }
+  ],
+  "articles": [
+    {
+      "id": "art_001",
+      "categoryId": "visa_updates",
+      "slug": "ind-2025-requirements-update",
+      "title": "IND 2025 Requirements: What Every International Student Must Know",
+      "excerpt": "The Immigration and Naturalisation Service has updated its requirements for the 2025 intake. Here is a complete breakdown of what has changed.",
+      "content": "The IND has updated its requirements for international students applying for the 2025 intake. Key changes include updated block money amounts and new health insurance requirements. Students must ensure they have a minimum of €2,700 in their bank account as block money. This amount must be maintained throughout the academic year...",
+      "image": "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 6,
+      "featured": true,
+      "publishedAt": "2025-01-15T09:00:00.000Z"
+    },
+    {
+      "id": "art_002",
+      "categoryId": "university_admission",
+      "slug": "netherlands-top-universities-2025",
+      "title": "Netherlands Top Universities for International Bachelors 2025",
+      "excerpt": "A comprehensive guide to the best Dutch universities for international Bachelor programmes, including entry requirements and application deadlines.",
+      "content": "The Netherlands is home to some of Europe's finest universities. For the 2025 intake, here are the key universities and their international student programmes...",
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 8,
+      "featured": true,
+      "publishedAt": "2025-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "art_003",
+      "categoryId": "embassy",
+      "slug": "embassy-interview-preparation-guide",
+      "title": "Complete Embassy Interview Preparation Guide for Netherlands MVV",
+      "excerpt": "Everything you need to know to prepare for your Dutch embassy interview for an MVV (Machtiging tot Voorlopig Verblijf).",
+      "content": "The Dutch embassy interview is a critical step in obtaining your MVV. Preparation is key. Here is what you should expect and how to prepare...",
+      "image": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 10,
+      "featured": false,
+      "publishedAt": "2025-01-08T09:00:00.000Z"
+    },
+    {
+      "id": "art_004",
+      "categoryId": "netherlands_news",
+      "slug": "amsterdam-student-housing-2025",
+      "title": "Amsterdam Student Housing Market 2025: What to Expect",
+      "excerpt": "Student housing in Amsterdam remains competitive. Here is what international students need to know before arriving.",
+      "content": "Finding student accommodation in Amsterdam is one of the biggest challenges for international students. Starting your search early is essential...",
+      "image": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 5,
+      "featured": false,
+      "publishedAt": "2025-01-05T09:00:00.000Z"
+    },
+    {
+      "id": "art_005",
+      "categoryId": "ind",
+      "slug": "ind-process-step-by-step",
+      "title": "The IND Process: A Step-by-Step Guide for New Students",
+      "excerpt": "Understanding the IND residence permit process from application to approval. A practical guide for international Bachelor students.",
+      "content": "The IND (Immigratie en Naturalisatiedienst) is responsible for processing residence permit applications in the Netherlands...",
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 7,
+      "featured": false,
+      "publishedAt": "2024-12-20T09:00:00.000Z"
+    },
+    {
+      "id": "art_006",
+      "categoryId": "student_life",
+      "slug": "living-in-netherlands-guide",
+      "title": "Living in the Netherlands: A Practical Guide for New International Students",
+      "excerpt": "From cycling culture to healthcare registration, everything you need to settle into life in the Netherlands.",
+      "content": "Moving to the Netherlands for your Bachelor studies is an exciting milestone. Here is everything you need to know to get settled...",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop",
+      "author": "BPN Editorial",
+      "readTime": 9,
+      "featured": false,
+      "publishedAt": "2024-12-15T09:00:00.000Z"
+    }
+  ]
+}

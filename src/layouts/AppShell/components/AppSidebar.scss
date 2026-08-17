@@ -1,0 +1,317 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+$sidebar-w: 260px;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-w;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow: hidden; // NO scroll on the sidebar itself
+
+  @media (max-width: 1023px) {
+    transform: translateX(-100%);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+
+  // ─── Brand (fixed top) ────────────────
+
+  &__brand {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #ececec;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &__brand-flag {
+    width: 30px;
+    height: 22px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    span {
+      display: block;
+      height: 33.33%;
+      &:nth-child(1) { background: #ae1c28; }
+      &:nth-child(2) { background: #ffffff; }
+      &:nth-child(3) { background: #21468b; }
+    }
+  }
+
+  &__brand-text { line-height: 1.2; flex: 1; min-width: 0; }
+
+  &__brand-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+  }
+
+  &__brand-sub {
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #8a8a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-top: 2px;
+  }
+
+  &__close {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    color: #6a6a6a;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+
+    &:hover { color: #1a1a2e; }
+
+    @media (max-width: 1023px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // ─── User card (fixed) ────────────────
+
+  &__user {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #faf8f3;
+    border-bottom: 1px solid #ececec;
+    flex-shrink: 0;
+  }
+
+  &__user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    background: #ffffff;
+  }
+
+  &__user-info { flex: 1; min-width: 0; }
+
+  &__user-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+
+  &__user-iso {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.6875rem;
+    color: #8a8578;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    i {
+      font-size: 0.875rem;
+      color: #b0a99a;
+    }
+  }
+
+  // ─── Navigation (scrollable middle) ────
+
+  &__nav {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 0.75rem;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+      background: #e8e5dc;
+      border-radius: 2px;
+
+      &:hover { background: #d8d4c8; }
+    }
+  }
+
+  &__nav-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #8a8a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0 0.375rem 0;
+
+    &--secondary { margin-top: 1.25rem; }
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 120ms ease, color 120ms ease;
+    position: relative;
+
+    i {
+      font-size: 1.125rem;
+      color: #8a8a8a;
+      transition: color 120ms ease;
+      flex-shrink: 0;
+    }
+
+    span {
+      flex: 1;
+      min-width: 0;
+    }
+
+    &:hover {
+      background: #f7f5f0;
+      color: #1a1a2e;
+
+      i { color: #1a3a6b; }
+    }
+
+    &--active {
+      background: #1a3a6b;
+      color: #ffffff;
+      font-weight: 600;
+
+      i { color: #ffffff; }
+
+      &:hover {
+        background: #0f2444;
+        color: #ffffff;
+
+        i { color: #ffffff; }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 20px;
+        background: #e8820c;
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+
+  &__nav-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background: #ae1c28;
+    color: #ffffff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    border-radius: 9px;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+
+  &__nav-link--active &__nav-badge {
+    background: #ffffff;
+    color: #1a3a6b;
+  }
+
+  // ─── Footer (pinned bottom) ────────────
+
+  &__footer {
+    padding: 0.875rem 0.75rem 1rem;
+    border-top: 1px solid #ececec;
+    flex-shrink: 0;
+    background: #ffffff;
+  }
+
+  &__logout {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    background: transparent;
+    border: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 120ms ease;
+    text-align: left;
+
+    i {
+      font-size: 1.125rem;
+      color: #8a8a8a;
+      transition: color 120ms ease;
+    }
+
+    &:hover {
+      background: #fdf3f3;
+      color: #ae1c28;
+
+      i { color: #ae1c28; }
+    }
+  }
+
+  &__version {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.625rem 0.75rem 0;
+    font-size: 0.6875rem;
+    color: #b0a99a;
+    letter-spacing: 0.02em;
+  }
+
+  &__version-dot { color: #d8d4c8; }
+}

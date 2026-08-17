@@ -1,0 +1,211 @@
+{
+  "dataVersion": 1,
+  "documentCategories": [
+    {
+      "id": "cat_university_admission",
+      "label": "University Admission",
+      "stage": "admission"
+    },
+    {
+      "id": "cat_university_interview",
+      "label": "University Interview",
+      "stage": "university_interview"
+    },
+    {
+      "id": "cat_ind",
+      "label": "IND Application",
+      "stage": "ind"
+    },
+    {
+      "id": "cat_embassy",
+      "label": "Embassy Interview",
+      "stage": "embassy"
+    },
+    {
+      "id": "cat_passport",
+      "label": "Passport & Travel",
+      "stage": "travel"
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_001",
+      "categoryId": "cat_university_admission",
+      "name": "Academic Transcripts",
+      "description": "Official transcripts from all previously attended educational institutions.",
+      "required": true,
+      "stage": "admission"
+    },
+    {
+      "id": "doc_002",
+      "categoryId": "cat_university_admission",
+      "name": "English Language Certificate",
+      "description": "IELTS, TOEFL, or equivalent English proficiency test results.",
+      "required": true,
+      "stage": "admission"
+    },
+    {
+      "id": "doc_003",
+      "categoryId": "cat_university_admission",
+      "name": "Motivation Letter",
+      "description": "A personal statement explaining your motivation to study in the Netherlands.",
+      "required": true,
+      "stage": "admission"
+    },
+    {
+      "id": "doc_004",
+      "categoryId": "cat_university_admission",
+      "name": "Letter of Recommendation",
+      "description": "Academic or professional reference letters.",
+      "required": false,
+      "stage": "admission"
+    },
+    {
+      "id": "doc_005",
+      "categoryId": "cat_university_interview",
+      "name": "University Offer Letter",
+      "description": "Official conditional or unconditional offer from your Dutch university.",
+      "required": true,
+      "stage": "university_interview"
+    },
+    {
+      "id": "doc_006",
+      "categoryId": "cat_university_interview",
+      "name": "Programme Information",
+      "description": "Details about your chosen Bachelor programme including curriculum.",
+      "required": false,
+      "stage": "university_interview"
+    },
+    {
+      "id": "doc_007",
+      "categoryId": "cat_ind",
+      "name": "Tuition Fee Payment Proof",
+      "description": "Bank receipt or confirmation showing full tuition fee payment.",
+      "required": true,
+      "stage": "ind"
+    },
+    {
+      "id": "doc_008",
+      "categoryId": "cat_ind",
+      "name": "Block Money Evidence",
+      "description": "Bank statement showing sufficient funds (approximately €2,700 or as required by IND).",
+      "required": true,
+      "stage": "ind"
+    },
+    {
+      "id": "doc_009",
+      "categoryId": "cat_ind",
+      "name": "Health Insurance Certificate",
+      "description": "Valid Dutch or internationally accepted health insurance.",
+      "required": true,
+      "stage": "ind"
+    },
+    {
+      "id": "doc_010",
+      "categoryId": "cat_ind",
+      "name": "Housing Confirmation",
+      "description": "Proof of accommodation arrangement in the Netherlands.",
+      "required": false,
+      "stage": "ind"
+    },
+    {
+      "id": "doc_011",
+      "categoryId": "cat_embassy",
+      "name": "Valid Passport",
+      "description": "Passport with at least 6 months validity beyond your intended stay.",
+      "required": true,
+      "stage": "embassy"
+    },
+    {
+      "id": "doc_012",
+      "categoryId": "cat_embassy",
+      "name": "Passport Photos",
+      "description": "Recent biometric passport photographs meeting Dutch visa requirements.",
+      "required": true,
+      "stage": "embassy"
+    },
+    {
+      "id": "doc_013",
+      "categoryId": "cat_embassy",
+      "name": "MVV Application Form",
+      "description": "Completed Machtiging tot Voorlopig Verblijf application form.",
+      "required": true,
+      "stage": "embassy"
+    },
+    {
+      "id": "doc_014",
+      "categoryId": "cat_embassy",
+      "name": "IND Approval Letter",
+      "description": "Approval letter from IND confirming your residence permit application.",
+      "required": true,
+      "stage": "embassy"
+    },
+    {
+      "id": "doc_015",
+      "categoryId": "cat_passport",
+      "name": "Flight Booking",
+      "description": "Confirmed return or onward flight booking to the Netherlands.",
+      "required": true,
+      "stage": "travel"
+    },
+    {
+      "id": "doc_016",
+      "categoryId": "cat_passport",
+      "name": "Travel Insurance",
+      "description": "Comprehensive travel insurance for the journey.",
+      "required": false,
+      "stage": "travel"
+    }
+  ],
+  "userDocumentStatus": [
+    {
+      "userId": "usr_001",
+      "documentId": "doc_001",
+      "status": "ready",
+      "notes": "Certified copies obtained from school",
+      "updatedAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_002",
+      "status": "ready",
+      "notes": "IELTS 7.0 obtained",
+      "updatedAt": "2025-01-10T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_003",
+      "status": "preparing",
+      "notes": "Draft in progress",
+      "updatedAt": "2025-01-18T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_005",
+      "status": "ready",
+      "notes": "Received from university",
+      "updatedAt": "2025-01-12T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_007",
+      "status": "not_started",
+      "notes": "",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_008",
+      "status": "preparing",
+      "notes": "Arranging bank statement",
+      "updatedAt": "2025-01-20T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_001",
+      "documentId": "doc_011",
+      "status": "ready",
+      "notes": "Valid until 2029",
+      "updatedAt": "2025-01-05T10:00:00.000Z"
+    }
+  ]
+}

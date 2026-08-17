@@ -1,0 +1,152 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.sh {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ececec;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(30%);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      rgba(10, 20, 40, 0.9) 0%,
+      rgba(10, 20, 40, 0.75) 55%,
+      rgba(10, 20, 40, 0.4) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 2.25rem 2.5rem;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      padding: 1.75rem 1.5rem;
+    }
+  }
+
+  &__left { max-width: 540px; }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  &__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 4px rgba(232, 130, 12, 0.25);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+
+    em { font-style: italic; color: #f3c896; }
+  }
+
+  &__lede {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 460px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(255,255,255,0.15);
+
+    @media (max-width: 900px) {
+      padding-left: 0;
+      padding-top: 1.25rem;
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      width: 100%;
+    }
+  }
+
+  &__avatar-wrap {
+    flex-shrink: 0;
+  }
+
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: #f5f3ee;
+  }
+
+  &__user-info {
+    min-width: 0;
+  }
+
+  &__user-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 2px;
+  }
+
+  &__user-name {
+    font-family: $font-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+
+  &__user-iso {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.6875rem;
+    color: #f3c896;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+}

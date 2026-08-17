@@ -1,0 +1,142 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.cat-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+.cat-tab {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  cursor: pointer;
+  transition: all 180ms ease;
+  font-family: 'Poppins', Arial, sans-serif;
+  text-align: left;
+
+  &:hover:not(&--active) {
+    border-color: #d4d4d4;
+    background: #faf8f3;
+
+    .cat-tab__icon {
+      background: #ffffff;
+      color: #1a3a6b;
+    }
+  }
+
+  &--active {
+    background: #1a3a6b;
+    border-color: #1a3a6b;
+    color: #ffffff;
+
+    .cat-tab__icon {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+    }
+
+    .cat-tab__label { color: #ffffff; }
+
+    .cat-tab__count {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .cat-tab__pct-num {
+      color: #f3c896;
+    }
+
+    .cat-tab__pct-bar {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .cat-tab__pct-bar-fill {
+      background: #f3c896;
+    }
+
+    // Amber accent bar on left
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background: #e8820c;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: #faf8f3;
+    color: #1a3a6b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 150ms ease;
+    flex-shrink: 0;
+
+    i { font-size: 1.25rem; }
+  }
+
+  &__body {
+    min-width: 0;
+    line-height: 1.25;
+  }
+
+  &__label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__count {
+    font-size: 0.6875rem;
+    color: #8a8578;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__pct {
+    text-align: right;
+    min-width: 50px;
+  }
+
+  &__pct-num {
+    font-family: $font-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a3a6b;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__pct-bar {
+    width: 40px;
+    height: 3px;
+    background: #f0edE6;
+    overflow: hidden;
+    margin-left: auto;
+  }
+
+  &__pct-bar-fill {
+    height: 100%;
+    background: #1a3a6b;
+    transition: width 500ms ease;
+  }
+}

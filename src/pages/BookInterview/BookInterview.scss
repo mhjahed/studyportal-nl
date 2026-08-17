@@ -1,0 +1,220 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.book {
+  &__back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6a6a6a;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: color 150ms ease;
+
+    i {
+      font-size: 1rem;
+      transition: transform 200ms ease;
+    }
+
+    &:hover {
+      color: #1a3a6b;
+      i { transform: translateX(-3px); }
+    }
+  }
+
+  // ─── Wizard header ─────────────────────────
+
+  &__wiz-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &__wiz-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  &__wiz-title {
+    font-family: $font-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+
+    em { color: #1a3a6b; font-style: italic; }
+  }
+
+  &__wiz-subtitle {
+    font-size: 0.9375rem;
+    color: #6a6a6a;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 640px;
+  }
+
+  // ─── Wizard progress ───────────────────────
+
+  &__progress {
+    margin-bottom: 2.5rem;
+  }
+
+  &__progress-count {
+    font-size: 0.75rem;
+    color: #8a8a8a;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+
+    strong {
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+  }
+
+  &__progress-bar {
+    height: 3px;
+    background: #ececec;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background: #1a3a6b;
+    border-radius: 2px;
+    transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__progress-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 640px) {
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__progress-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &-num {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #b0b0b0;
+      letter-spacing: 0.06em;
+      min-width: 20px;
+
+      i { font-size: 1rem; }
+    }
+
+    &-label {
+      font-size: 0.8125rem;
+      color: #8a8a8a;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    &--active &-num { color: #1a3a6b; }
+    &--active &-label { color: #1a1a2e; font-weight: 600; }
+    &--done &-num { color: #1d7a47; }
+    &--done &-label { color: #4a4a4a; }
+  }
+
+  // ─── Section header ────────────────────────
+
+  &__section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  &__section-title {
+    font-family: $font-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+  }
+
+  &__section-desc {
+    font-size: 0.875rem;
+    color: #6a6a6a;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 560px;
+  }
+
+  // ─── Locked field notice ───────────────────
+
+  &__locked-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #8a8578;
+    margin-bottom: 1.5rem;
+    padding: 8px 12px;
+    background: #faf8f3;
+    border-left: 3px solid #e8820c;
+
+    i {
+      font-size: 1rem;
+      color: #e8820c;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─── Mobile-specific booking adjustments ────────────────────────────────────
+
+@media (max-width: 640px) {
+  .book__progress-list {
+    // Show step numbers only, hide labels on tiny screens
+    .book__progress-item-label {
+      display: none;
+    }
+
+    // Make numbers more prominent since labels are gone
+    .book__progress-item-num {
+      font-size: 0.875rem;
+      padding: 4px 10px;
+      background: #f7f5f0;
+      border-radius: 2px;
+      min-width: 36px;
+      text-align: center;
+    }
+
+    .book__progress-item--active .book__progress-item-num {
+      background: #1a3a6b;
+      color: #ffffff;
+    }
+
+    .book__progress-item--done .book__progress-item-num {
+      background: #1d7a47;
+      color: #ffffff;
+    }
+  }
+}

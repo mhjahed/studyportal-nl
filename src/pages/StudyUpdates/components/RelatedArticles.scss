@@ -1,0 +1,42 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.rel {
+  &__header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 1.5rem;
+  }
+
+  &__eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

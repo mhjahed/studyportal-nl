@@ -1,0 +1,114 @@
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.5rem 1rem;
+  background: #faf8f3;
+  border: 1px solid #e8e5dc;
+  border-radius: 4px;
+
+  @media (max-width: 1279px) {
+    gap: 1rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    line-height: 1;
+  }
+
+  &__time {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  &__colon {
+    color: #1a3a6b;
+    animation: clock-blink 1s step-end infinite;
+    margin: 0 2px;
+    font-weight: 500;
+  }
+
+  @keyframes clock-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.6875rem;
+    color: #8a8578;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__weekday {
+    color: #6a6a6a;
+    font-weight: 600;
+  }
+
+  &__sep { color: #d8d4c8; }
+  &__date { color: #8a8578; }
+
+  &__divider {
+    width: 1px;
+    height: 30px;
+    background: #d8d4c8;
+    flex-shrink: 0;
+  }
+
+  &__block--ams {
+    @media (max-width: 1279px) { display: none; }
+  }
+
+  &__ams-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #6a6a6a;
+    line-height: 1;
+  }
+
+  &__ams-flag {
+    width: 12px;
+    height: 9px;
+    border-radius: 1px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+
+    span {
+      display: block;
+      height: 33.33%;
+      &:nth-child(1) { background: #ae1c28; }
+      &:nth-child(2) { background: #ffffff; }
+      &:nth-child(3) { background: #21468b; }
+    }
+  }
+
+  &__ams-time {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1a3a6b;
+    letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+}

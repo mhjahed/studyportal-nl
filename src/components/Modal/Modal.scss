@@ -1,0 +1,174 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.55);
+    animation: modal-fade 200ms ease;
+    cursor: pointer;
+  }
+
+  @keyframes modal-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+&__panel {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border: 1px solid #d8d4c8;
+  box-shadow: 0 20px 60px rgba(10, 20, 40, 0.2);
+  width: 100%;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  animation: modal-in 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  -webkit-overflow-scrolling: touch;   // ← add smooth iOS scroll
+
+  &--compact { max-width: 400px; }
+  &--default { max-width: 480px; }
+  &--large { max-width: 640px; }
+
+  @media (max-width: 480px) {
+    max-height: calc(100vh - 2rem);
+    max-width: 100% !important;         // ← force full width on tiny screens
+  }
+}
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
+// ─── Shared modal content styles ────────────────────────────────────────────
+
+.modal-content {
+  padding: 2rem 2rem 1.5rem;
+
+  @media (max-width: 480px) { padding: 1.5rem 1.25rem 1.25rem; }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+
+    i { font-size: 0.9375rem; }
+  }
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i { font-size: 1.75rem; }
+
+    &--info {
+      background: rgba(26, 58, 107, 0.08);
+      i { color: #1a3a6b; }
+    }
+
+    &--warning {
+      background: rgba(232, 130, 12, 0.1);
+      i { color: #e8820c; }
+    }
+
+    &--danger {
+      background: rgba(174, 28, 40, 0.08);
+      i { color: #ae1c28; }
+    }
+
+    &--success {
+      background: rgba(29, 122, 71, 0.1);
+      i { color: #1d7a47; }
+    }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    margin: 0 0 0.75rem 0;
+
+    &--center { text-align: center; }
+  }
+
+  &__message {
+    font-size: 0.9375rem;
+    color: #6a6a6a;
+    line-height: 1.65;
+    margin: 0 0 1.5rem 0;
+
+    &--center { text-align: center; }
+
+    strong { color: #1a1a2e; font-weight: 600; }
+  }
+
+  &__body {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 1.25rem 2rem;
+  border-top: 1px solid #ececec;
+  background: #faf8f3;
+
+  @media (max-width: 480px) {
+    flex-direction: column-reverse;
+    padding: 1rem 1.25rem;
+
+    .btn-solid, .btn-ghost {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &--center { justify-content: center; }
+
+  &--danger {
+    .btn-solid {
+      background: #ae1c28;
+
+      &:hover:not(:disabled) {
+        background: #8a1620;
+      }
+    }
+  }
+}

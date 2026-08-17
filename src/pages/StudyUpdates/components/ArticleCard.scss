@@ -1,0 +1,118 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.art-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  &:hover {
+    border-color: #1a3a6b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10, 20, 40, 0.06);
+
+    .art-card__title { color: #1a3a6b; }
+    .art-card__image img { transform: scale(1.05); }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1a3a6b;
+    outline-offset: 4px;
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #f5f3ee;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 400ms ease;
+    }
+  }
+
+  &__category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a3a6b;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(4px);
+  }
+
+  &__body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    line-height: 1.3;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.005em;
+    transition: color 150ms ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__excerpt {
+    font-size: 0.8125rem;
+    color: #6a6a6a;
+    line-height: 1.55;
+    margin: 0 0 1rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+    color: #8a8578;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f0edE6;
+  }
+
+  &__meta-sep { color: #d8d4c8; }
+
+  // Compact variant (used in "Recommended for you")
+  &--compact {
+    background: #ffffff;
+
+    .art-card__image { aspect-ratio: 4/3; }
+
+    .art-card__body { padding: 1rem; }
+
+    .art-card__title {
+      font-size: 0.9375rem;
+      -webkit-line-clamp: 2;
+    }
+
+    .art-card__excerpt { display: none; }
+  }
+}

@@ -1,0 +1,156 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.pa-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  padding: 1.75rem;
+
+  @media (max-width: 640px) { padding: 1.5rem 1.25rem; }
+
+  &__header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &__eyebrow {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__pending {
+    margin-top: 1.25rem;
+    padding: 12px 14px;
+    background: #faf8f3;
+    border-left: 3px solid #e8820c;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(232, 130, 12, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      i {
+        font-size: 1.125rem;
+        color: #e8820c;
+      }
+    }
+
+    &-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+
+    &-text {
+      font-size: 0.75rem;
+      color: #6a6a6a;
+    }
+  }
+}
+
+// ─── Activity item ─────────────────────────────────────────────────────────
+
+.pa-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: #faf8f3;
+  border: 1px solid #e8e5dc;
+  text-decoration: none;
+  color: inherit;
+  transition: all 150ms ease;
+
+  &:hover {
+    background: #ffffff;
+    border-color: #1a3a6b;
+    color: inherit;
+
+    .pa-item__arrow {
+      color: #1a3a6b;
+      transform: translateX(3px);
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__body {
+    min-width: 0;
+  }
+
+  &__value {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.005em;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: #6a6a6a;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  &__subtext {
+    font-size: 0.625rem;
+    color: #8a8578;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+  }
+
+  &__arrow {
+    font-size: 1.125rem;
+    color: #b0a99a;
+    transition: all 200ms ease;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,29 @@
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 1000;
+  overflow: hidden;
+  pointer-events: none;
+
+  &__bar {
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #1a3a6b 25%,
+      #e8820c 75%,
+      transparent 100%
+    );
+    animation: page-loader-slide 800ms ease-in-out infinite;
+  }
+
+  @keyframes page-loader-slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+  }
+}

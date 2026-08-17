@@ -1,0 +1,32 @@
+{
+  "dataVersion": 1,
+  "requests": [
+    {
+      "id": "req_001",
+      "requestId": "IREQ-20240115-001",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "type": "university",
+      "typeLabel": "University Admission Interview",
+      "status": "approved",
+      "personalDetails": {
+        "firstName": "Jahed",
+        "lastName": "Rahman",
+        "dateOfBirth": "1999-03-15",
+        "passportNumber": "PK1234567",
+        "passportExpiry": "2029-03-14"
+      },
+      "universityDetails": {
+        "universityName": "University of Amsterdam",
+        "studyLevel": "Bachelor",
+        "course": "International Business Administration",
+        "location": "Amsterdam",
+        "duration": "3 years",
+        "startDate": "2025-09-01",
+        "additionalInfo": "Full scholarship application submitted"
+      },
+      "submittedAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-01-20T09:00:00.000Z"
+    }
+  ]
+}

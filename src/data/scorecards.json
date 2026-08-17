@@ -1,0 +1,65 @@
+{
+  "dataVersion": 1,
+  "scorecards": [
+    {
+      "id": "sc_001",
+      "userId": "usr_001",
+      "isoCode": "BPN-2024-NL-0001",
+      "resultId": "res_001",
+      "interviewId": "int_001",
+      "type": "university",
+      "typeLabel": "University Admission Interview",
+      "interviewDate": "2025-01-10",
+      "status": "published",
+      "criteria": [
+        {
+          "id": "cr_01",
+          "name": "Communication Skills",
+          "score": 17,
+          "maxScore": 20,
+          "feedback": "Clear and articulate responses. Could improve technical vocabulary."
+        },
+        {
+          "id": "cr_02",
+          "name": "Confidence",
+          "score": 16,
+          "maxScore": 20,
+          "feedback": "Showed good confidence throughout. Minor hesitation on detailed questions."
+        },
+        {
+          "id": "cr_03",
+          "name": "Course Knowledge",
+          "score": 18,
+          "maxScore": 20,
+          "feedback": "Excellent understanding of the chosen course and its career implications."
+        },
+        {
+          "id": "cr_04",
+          "name": "University Knowledge",
+          "score": 15,
+          "maxScore": 20,
+          "feedback": "Good awareness of the university. Needs deeper research into specific departments."
+        },
+        {
+          "id": "cr_05",
+          "name": "Study Motivation",
+          "score": 16,
+          "maxScore": 20,
+          "feedback": "Strong motivation clearly communicated. Personal story was compelling."
+        }
+      ],
+      "strengths": [
+        "Excellent course knowledge",
+        "Strong academic background",
+        "Clear communication"
+      ],
+      "weaknesses": [
+        "Limited knowledge of university-specific resources",
+        "Occasional hesitation under pressure"
+      ],
+      "overallComments": "A well-prepared candidate with clear academic goals. Ready for the next stage with minor improvements.",
+      "publishedAt": "2025-01-12T09:00:00.000Z",
+      "createdAt": "2025-01-11T16:00:00.000Z"
+    }
+  ]
+}

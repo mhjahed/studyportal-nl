@@ -1,0 +1,86 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 1.5rem;
+
+    // Better breakpoint for tablet — was 1023, now 1150
+    @media (max-width: 1150px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+  }
+}
+
+// ─── Shared card style ──────────────────────────────────────────────────────
+
+.d-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  padding: 1.5rem 1.75rem;
+
+  @media (max-width: 480px) {
+    padding: 1.25rem;
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0edE6;
+  }
+
+  &__eyebrow {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin: 0;
+
+    em { color: #1a3a6b; font-style: italic; }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1a3a6b;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    i { font-size: 1rem; transition: transform 200ms ease; }
+
+    &:hover {
+      color: #0f2444;
+      i { transform: translateX(3px); }
+    }
+  }
+}

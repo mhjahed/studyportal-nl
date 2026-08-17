@@ -1,0 +1,145 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  min-height: 200px;
+
+  &--fullpage {
+    min-height: 60vh;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #8a8578;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &--skeleton,
+  &--skeleton-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  &--skeleton-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ─── Skeleton primitives ────────────────────────────────────────────────────
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0edE6 25%,
+    #e8e5dc 50%,
+    #f0edE6 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  border-radius: 3px;
+
+  &--avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &--line {
+    height: 12px;
+    margin-bottom: 8px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &--title {
+    height: 18px;
+    width: 60%;
+  }
+
+  &--text { width: 90%; }
+  &--text-short { width: 45%; }
+
+  &--btn {
+    width: 88px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  &--image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0;
+  }
+
+  &--hero-band {
+    height: 280px;
+    border-radius: 0;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #ececec;
+
+  &__body {
+    min-width: 0;
+  }
+}
+
+.skeleton-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+
+  &__body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.skeleton-hero {
+  border: 1px solid #ececec;
+  overflow: hidden;
+}

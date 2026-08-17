@@ -1,0 +1,57 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.notif-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+// ─── List ──────────────────────────────────────────────────────────────────
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+// ─── Day group ─────────────────────────────────────────────────────────────
+
+.notif-group {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+  }
+
+  &__label {
+    font-family: $font-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1;
+  }
+
+  &__count {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #8a8578;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: #ececec;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,111 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+
+  &__container {
+    text-align: center;
+    max-width: 560px;
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 2rem;
+
+    span {
+      font-family: $font-serif;
+      font-size: clamp(5rem, 12vw, 8rem);
+      font-weight: 400;
+      color: #1a1a2e;
+      line-height: 1;
+    }
+  }
+
+  &__flag {
+    width: clamp(70px, 12vw, 100px);
+    height: clamp(52px, 9vw, 74px);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+    span {
+      display: block;
+      height: 33.33% !important;
+      font-size: 0 !important;
+
+      &:nth-child(1) { background: #ae1c28; }
+      &:nth-child(2) { background: #ffffff; }
+      &:nth-child(3) { background: #21468b; }
+    }
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 4px rgba(232, 130, 12, 0.25);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+
+    em {
+      font-style: italic;
+      color: #1a3a6b;
+    }
+  }
+
+  &__message {
+    font-size: 1rem;
+    color: #6a6a6a;
+    line-height: 1.65;
+    margin: 0 auto 2rem;
+    max-width: 460px;
+  }
+
+  &__actions {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+
+      .btn-solid, .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

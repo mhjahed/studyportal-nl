@@ -1,0 +1,208 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+$header-h: 68px;
+$mobile-header-h: 60px;
+
+.app-header {
+  height: $header-h;
+  background: #ffffff;
+  border-bottom: 1px solid #ececec;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+
+  @media (max-width: 1279px) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 767px) {
+    height: $mobile-header-h;
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+
+  &__menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 0.375rem;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+
+    @media (max-width: 1023px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+&__mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;                // ← add: allow shrink
+
+  @media (max-width: 1023px) { display: flex; }
+}
+
+&__mobile-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.005em;
+  white-space: nowrap;          // ← add
+  overflow: hidden;             // ← add
+  text-overflow: ellipsis;      // ← add
+  min-width: 0;                 // ← add
+
+  // On very small phones, hide the brand text entirely
+  @media (max-width: 380px) {
+    display: none;
+  }
+}
+
+  &__mobile-flag {
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+
+    span {
+      display: block;
+      height: 33.33%;
+      &:nth-child(1) { background: #ae1c28; }
+      &:nth-child(2) { background: #ffffff; }
+      &:nth-child(3) { background: #21468b; }
+    }
+  }
+
+  &__mobile-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+  }
+
+  &__clock-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1023px) { display: none; }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  &__icon-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: #4a4a4a;
+    font-size: 1.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 150ms ease;
+
+    &:hover {
+      background: #f7f5f0;
+      color: #1a3a6b;
+    }
+  }
+
+  &__notif-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    background: #ae1c28;
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1;
+  }
+
+  &__profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.375rem 0.625rem 0.375rem 0.375rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 150ms ease;
+    font-family: 'Poppins', Arial, sans-serif;
+
+    &:hover { background: #f7f5f0; }
+
+    @media (max-width: 767px) { padding: 0.25rem; }
+  }
+
+  &__profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #ececec;
+    background: #f5f3ee;
+    flex-shrink: 0;
+  }
+
+  &__profile-info {
+    text-align: left;
+    line-height: 1.2;
+
+    @media (max-width: 767px) { display: none; }
+  }
+
+  &__profile-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  &__profile-role {
+    font-size: 0.6875rem;
+    color: #8a8a8a;
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  &__profile-chevron {
+    font-size: 1rem;
+    color: #8a8a8a;
+    transition: transform 200ms ease;
+
+    &--open { transform: rotate(180deg); }
+
+    @media (max-width: 767px) { display: none; }
+  }
+}

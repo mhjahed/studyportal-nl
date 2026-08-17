@@ -1,0 +1,75 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.reco {
+  padding: 2rem 2.25rem;
+  background: linear-gradient(160deg, #faf8f3 0%, #f5f3ee 100%);
+  border: 1px solid #e8e5dc;
+  position: relative;
+
+  @media (max-width: 640px) { padding: 1.5rem 1.25rem; }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: #e8820c;
+  }
+
+  &__header {
+    margin-bottom: 1.5rem;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #e8820c;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+
+  &__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.2);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    margin: 0 0 6px 0;
+  }
+
+  &__lede {
+    font-size: 0.875rem;
+    color: #6a6a6a;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

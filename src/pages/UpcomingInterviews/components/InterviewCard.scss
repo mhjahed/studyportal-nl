@@ -1,0 +1,324 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.iv-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  overflow: hidden;
+  transition: all 200ms ease;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+
+  &:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 4px 16px rgba(10, 20, 40, 0.05);
+  }
+
+  &--next {
+    border-color: #e8820c;
+    border-width: 2px;
+    box-shadow: 0 8px 24px rgba(232, 130, 12, 0.1);
+
+    &:hover {
+      border-color: #e8820c;
+      box-shadow: 0 12px 32px rgba(232, 130, 12, 0.15);
+    }
+  }
+
+  &--completed {
+    opacity: 0.85;
+
+    .iv-card__date {
+      background: #6a6a6a !important;
+    }
+  }
+
+  &--cancelled {
+    opacity: 0.7;
+
+    .iv-card__date {
+      background: #b0a99a !important;
+    }
+  }
+
+  // ─── Date block ─────────────────────────
+
+  &__date {
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+
+    @media (max-width: 640px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 1rem 1.25rem;
+    }
+  }
+
+  &__next-badge {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    background: #e8820c;
+    color: #ffffff;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    @media (max-width: 640px) {
+      position: static;
+      margin: -1rem -1.25rem 8px;
+      width: calc(100% + 2.5rem);
+    }
+  }
+
+  &__next-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: iv-pulse 1.5s ease infinite;
+  }
+
+  @keyframes iv-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  &__date-month {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #f3c896;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    line-height: 1;
+  }
+
+  &__date-day {
+    font-family: $font-serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #ffffff;
+
+    @media (max-width: 640px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__date-weekday {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.7);
+    line-height: 1;
+    margin-top: 4px;
+
+    @media (max-width: 640px) {
+      margin-top: 0;
+    }
+  }
+
+  // ─── Body ───────────────────────────────
+
+  &__body {
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (max-width: 640px) {
+      padding: 1.25rem;
+      gap: 1rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__type-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  &__type {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    i {
+      font-size: 0.9375rem;
+    }
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    margin: 0;
+
+    span {
+      color: #8a8578;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  // Details grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    background: #faf8f3;
+    border: 1px solid #e8e5dc;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+
+    span {
+      font-size: 0.625rem;
+      color: #8a8578;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    strong {
+      font-size: 0.875rem;
+      color: #1a1a2e;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+  }
+
+  &__tz {
+    font-weight: 500;
+    color: #8a8578;
+    font-size: 0.75rem;
+  }
+
+  // Instructions
+  &__instructions {
+    padding: 1rem 1.25rem;
+    background: #f0f3f9;
+    border-left: 3px solid #1a3a6b;
+
+    &-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #1a3a6b;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+
+      i { font-size: 0.9375rem; }
+    }
+
+    p {
+      font-size: 0.8125rem;
+      color: #4a4a4a;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  // Actions
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+
+      .btn-solid, .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__completed-note,
+  &__cancelled-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #faf8f3;
+    border: 1px solid #e8e5dc;
+    font-size: 0.8125rem;
+    color: #6a6a6a;
+    width: 100%;
+
+    i {
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__completed-note i { color: #1d7a47; }
+  &__cancelled-note i { color: #ae1c28; }
+}

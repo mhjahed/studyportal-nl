@@ -1,0 +1,22 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__body {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: flex-start;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    min-width: 0;
+  }
+}

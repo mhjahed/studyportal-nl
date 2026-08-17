@@ -1,0 +1,279 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.selector {
+  &__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #1a3a6b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1rem;
+  }
+
+  &__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8820c;
+    box-shadow: 0 0 0 3px rgba(232, 130, 12, 0.2);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+
+    em {
+      font-style: italic;
+      color: #1a3a6b;
+    }
+  }
+
+  &__lede {
+    font-size: 1rem;
+    color: #6a6a6a;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 580px;
+  }
+
+  // Grid of type cards
+&__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  // Was 1200 — better at 1050 so cards don't feel cramped
+  @media (max-width: 1050px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+  // Bottom note
+  &__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: #faf8f3;
+    border-left: 3px solid #1a3a6b;
+
+    > i {
+      font-size: 1.25rem;
+      color: #1a3a6b;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.8125rem;
+      color: #6a6a6a;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// ─── Type Card ──────────────────────────────────────────────────────────────
+
+.type-card {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: #1a3a6b;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(10, 20, 40, 0.1);
+
+    .type-card__cta {
+      background: #1a3a6b;
+      color: #ffffff;
+
+      i { transform: translateX(4px); }
+    }
+
+    .type-card__image img {
+      transform: scale(1.08);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1a3a6b;
+    outline-offset: 4px;
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #f5f3ee;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 500ms ease;
+    }
+  }
+
+  &__image-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a3a6b;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(4px);
+  }
+
+  &__num {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    font-family: $font-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  &__body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__subtitle {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #8a8578;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+    margin: 0 0 0.75rem 0;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    color: #6a6a6a;
+    line-height: 1.65;
+    margin: 0 0 1.25rem 0;
+    flex: 1;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 1rem;
+    background: #faf8f3;
+    border: 1px solid #e8e5dc;
+    margin-bottom: 1.25rem;
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    i {
+      font-size: 1rem;
+      color: #1a3a6b;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    span {
+      font-size: 0.625rem;
+      color: #8a8578;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    strong {
+      font-size: 0.75rem;
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    background: #faf8f3;
+    color: #1a3a6b;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 200ms ease;
+
+    i {
+      font-size: 1.125rem;
+      transition: transform 200ms ease;
+    }
+  }
+}

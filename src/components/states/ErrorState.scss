@@ -1,0 +1,112 @@
+$font-serif: 'Georgia', 'Times New Roman', 'Iowan Old Style', serif;
+
+.error-state {
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border: 1px solid #ececec;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 2.25rem;
+    }
+  }
+
+  &--default &__icon,
+  &--notfound &__icon {
+    background: rgba(174, 28, 40, 0.08);
+    border: 1px solid rgba(174, 28, 40, 0.2);
+
+    i { color: #ae1c28; }
+  }
+
+  &--network &__icon {
+    background: rgba(232, 130, 12, 0.08);
+    border: 1px solid rgba(232, 130, 12, 0.2);
+
+    i { color: #e8820c; }
+  }
+
+  &--session &__icon {
+    background: rgba(26, 58, 107, 0.08);
+    border: 1px solid rgba(26, 58, 107, 0.2);
+
+    i { color: #1a3a6b; }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.625rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+  }
+
+  &__message {
+    font-size: 0.9375rem;
+    color: #6a6a6a;
+    line-height: 1.65;
+    margin: 0 auto 2rem;
+    max-width: 440px;
+  }
+
+  &__details {
+    margin: 0 auto 2rem;
+    max-width: 500px;
+    text-align: left;
+
+    summary {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8a8578;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      padding: 8px 0;
+
+      &:hover { color: #1a3a6b; }
+    }
+
+    pre {
+      margin: 8px 0 0;
+      padding: 12px 14px;
+      background: #faf8f3;
+      border: 1px solid #e8e5dc;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #4a4a4a;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+
+  &__actions {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      width: 100%;
+
+      .btn-solid, .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

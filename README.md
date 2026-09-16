@@ -1,329 +1,217 @@
-# Bachelors Portal Netherlands
+<!-- BACHELORS PORTAL NETHERLANDS · dutch blue #1a3a6b / amber #e8820c · editorial aesthetic · widgets verified 2026-09-12 -->
 
-A dedicated preparation platform for international students pursuing a Bachelor's degree at a Dutch university.
+<div align="center">
 
-The portal handles the complete student journey — from registration and interview practice booking, through IND and embassy preparation, to final travel readiness. Built as a frontend-only application with a full administrative interface for managing the entire student pipeline.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,100:e8820c&height=195&section=header&text=BACHELORS%20PORTAL%20NL&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=admission%20%C2%B7%20ind%20%C2%B7%20embassy%20%E2%80%94%20the%20complete%20student%20journey&descSize=16&descAlignY=60" alt="Bachelors Portal NL" />
 
----
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=2600&pause=900&color=E8820C&center=true&vCenter=true&width=760&height=95&lines=university+%E2%86%92+ind+%E2%86%92+embassy+%E2%80%94+the+full+journey;booking+%C2%B7+scorecards+%C2%B7+documents+%C2%B7+updates;frontend-only+%C2%B7+json+data+%C2%B7+emailjs" alt="typing" />
 
-## Overview
+<p>
+  <img src="https://img.shields.io/badge/react-18-0d1117?style=for-the-badge&logo=react&logoColor=61dafb" alt="react" />
+  <img src="https://img.shields.io/badge/vite-5-0d1117?style=for-the-badge&logo=vite&logoColor=bd34fe" alt="vite" />
+  <img src="https://img.shields.io/badge/router-6-0d1117?style=for-the-badge&logo=reactrouter&logoColor=ca4245" alt="router" />
+  <img src="https://img.shields.io/badge/scss%20%2B%20bootstrap-5-0d1117?style=for-the-badge&logo=sass&logoColor=cc6699" alt="styling" />
+  <img src="https://img.shields.io/badge/emailjs-x3%20accounts-e8820c?style=for-the-badge&logoColor=white" alt="emailjs" />
+  <img src="https://img.shields.io/badge/backend-none-1a3a6b?style=for-the-badge&logoColor=white" alt="no backend" />
+</p>
 
-Studying in the Netherlands involves a specific sequence of interviews and document requirements that most international students navigate for the first time. This portal provides structured preparation across every stage:
+</div>
 
-- **University Admission** — practice interviews for Dutch academic institutions
-- **IND Application** — preparation for the Immigratie en Naturalisatiedienst residence permit interview
-- **Embassy Interview** — final MVV appointment preparation
-- **Document Tracking** — comprehensive checklist across all application stages
-- **Study Updates** — editorial content on visa policies, university news, and student life
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-Each student receives a personalised portal with scheduled interviews, published results, detailed scorecards, and progress tracking throughout the entire application lifecycle.
+## ▍$ cat brief.txt
 
----
+A dedicated preparation platform for international students pursuing a **Bachelor's
+degree at a Dutch university**. The portal shepherds each student through the entire
+pipeline — registration and interview practice, IND and embassy preparation, document
+readiness, final travel checks — with a personalised dashboard and a full administrative
+back-office. **Frontend-only** by architecture: JSON data layer, LocalStorage state,
+EmailJS for all transactional mail (spread across three accounts for volume headroom).
 
-## Live Demo
+```yaml
+audience  : international applicants to NL universities
+scope     : student portal + protected admin interface (/dev-tools)
+data      : 11 json collections · localstorage · versioned (dataVersion)
+mail      : emailjs — registration + interview templates
+deploy    : any static host (netlify · vercel · cloudflare pages)
+```
 
-Once deployed, the portal is available at your chosen domain. The site includes:
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-- Student registration and login
-- Full authenticated dashboard
-- Interview booking system
-- Results and detailed scorecards
-- Document preparation tracker
-- Study updates and editorial content
-- Notification centre
-- Profile and settings
+## ▍$ cat journey.map — the student pipeline
 
----
+```
+01 ▸  UNIVERSITY ADMISSION   practice interviews for dutch academic institutions
+02 ▸  IND APPLICATION        residence-permit interview preparation (immigratie & naturalisatiedienst)
+03 ▸  EMBASSY INTERVIEW      final mvv appointment readiness
+04 ▸  DOCUMENT TRACKING      live checklist across every application stage
+05 ▸  STUDY UPDATES          editorial feed — visa policy, university news, student life
+```
 
-## Technology Stack
+Each student gets a personal portal: scheduled interviews, published results,
+detailed scorecards, notifications, and progress tracking across the whole lifecycle.
 
-Built with modern, stable web technologies chosen for reliability and maintainability rather than novelty.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-| Layer | Technology | Purpose |
-|------|-----------|---------|
-| Framework | React 18 | Component-based UI |
-| Build tool | Vite 5 | Fast development and optimised production builds |
-| Routing | React Router 6 | Client-side navigation |
-| Styling | SCSS + Bootstrap 5 | Structured styling with utility support |
-| Typography | Poppins (sans-serif), Georgia (serif) | Editorial design language |
-| Icons | Boxicons | Consistent iconography |
-| Email delivery | EmailJS | Transactional emails without a backend |
-| Data persistence | LocalStorage + JSON | Client-side state with static seed data |
+## ▍$ ls features/
 
-No backend server. No database. All data lives in JSON files served as static assets, with client-side state managed through the browser's LocalStorage.
+| STUDENT SIDE | ADMIN SIDE (`/dev-tools`, passphrase-gated) |
+|---|---|
+| ▸ multi-step registration + login ▸ authenticated dashboard ▸ 3 booking wizards ▸ results + scorecards ▸ document checklist ▸ notification centre ▸ profile + settings | ▸ users — create / suspend / activate ▸ requests — approve registrations + bookings ▸ interviews — schedule w/ google meet links ▸ results — draft → publish + auto grades ▸ scorecards — fully dynamic criteria ▸ notifications — targeted sends ▸ data — publish bundles, backups, resets |
 
----
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-## Design Philosophy
+## ▍$ cat design.manifesto
 
-The interface is intentionally editorial rather than dashboard-driven. Design decisions were made against a specific set of anti-patterns:
+An **editorial** interface, not a dashboard clone. Decisions made against a
+deliberate anti-pattern list:
 
-**Avoided throughout:**
-- Generic SaaS card grids
-- Excessive gradients and glassmorphism
-- Emoji-driven UI
-- Fake statistics used purely as decoration
-- Dark mode toggles
-- Meaningless animation
+<table>
+<tr><th>AVOIDED</th><th>CHOSEN</th></tr>
+<tr><td valign="top">
 
-**Chosen deliberately:**
-- Georgia serif for headings, echoing academic publishing traditions
-- Numbered progressions (01, 02, 03) rather than icon chips
-- Warm cream `#faf8f3` for elevated surfaces suggesting document paper
-- Netherlands blue `#1a3a6b` and amber `#e8820c` as the primary palette
-- Sharp 2px corners rather than pill-shaped rounded elements
-- Real editorial photography with proper captions where relevant
+▸ generic saas card grids
+▸ gradients + glassmorphism
+▸ emoji-driven ui
+▸ decorative fake statistics
+▸ dark mode toggles
+▸ meaningless animation
 
-The result is a portal that feels closer to a professional publication than a generic web application.
+</td><td valign="top">
 
----
+▸ **Georgia serif** headings — academic publishing
+▸ **numbered progressions** (01, 02, 03) over icon chips
+▸ warm cream `#faf8f3` — document-paper surfaces
+▸ **Netherlands blue `#1a3a6b` + amber `#e8820c`**
+▸ sharp **2px corners** — no pill shapes
+▸ real photography with captions, where relevant
 
-## Project Structure
-bachelors-portal-netherlands/
-├── public/
-│ ├── data/ # JSON data served at runtime
-│ │ ├── users.json
-│ │ ├── interviews.json
-│ │ ├── results.json
-│ │ ├── scorecards.json
-│ │ ├── blogs.json
-│ │ └── ...
-│ └── favicon.svg
-├── src/
-│ ├── assets/
-│ │ └── scss/ # Global styles and design tokens
-│ ├── components/ # Shared components (Modal, PortalDropdown, states)
-│ ├── context/ # Auth context
-│ ├── data/ # Fallback seed data
-│ ├── hooks/ # Custom React hooks
-│ ├── layouts/
-│ │ └── AppShell/ # Sidebar + header + main layout
-│ ├── pages/
-│ │ ├── Register/ # Multi-step registration
-│ │ ├── Login/ # Sign in with welcome animation
-│ │ ├── Dashboard/ # Student command centre
-│ │ ├── BookInterview/ # Interview booking wizards
-│ │ ├── UpcomingInterviews/
-│ │ ├── Results/
-│ │ ├── Scorecard/
-│ │ ├── Documents/
-│ │ ├── StudyUpdates/
-│ │ ├── Notifications/
-│ │ ├── Profile/
-│ │ ├── Settings/
-│ │ └── DevTools/ # Admin interface (passphrase-protected)
-│ ├── services/
-│ │ ├── storageService.js # LocalStorage abstraction
-│ │ ├── dataService.js # Data operations
-│ │ ├── adminService.js # Admin CRUD operations
-│ │ ├── emailService.js # EmailJS integration
-│ │ └── remoteDataService.js # Fetches JSON on first load
-│ ├── utils/
-│ │ ├── imageUpload.js # Base64 image compression
-│ │ └── imageUrl.js # URL normalisation
-│ ├── App.jsx
-│ └── main.jsx
-├── index.html
-├── vite.config.js
-├── package.json
-└── .env.example
+</td></tr>
+</table>
 
-text
+The result reads like a professional publication, not a web app template.
 
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
----
+## ▍$ cat stack.json
 
-## Getting Started
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=react,vite,sass,bootstrap,js,html,css&perline=9" alt="stack" />
+</div>
 
-### Prerequisites
+<br/>
 
-- Node.js 22 LTS or later
-- npm 10 or later
+| LAYER | TECH | PURPOSE |
+|---|---|---|
+| framework | React 18 | component-based ui |
+| build | Vite 5 | fast dev, optimized bundles |
+| routing | React Router 6 | client-side navigation |
+| styling | SCSS + Bootstrap 5 | design tokens + utilities |
+| type | Poppins · Georgia | editorial voice |
+| icons | Boxicons | consistent iconography |
+| mail | EmailJS (×3) | transactional email, no server |
+| data | LocalStorage + JSON | client state over seed data |
 
-### Installation
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-Clone the repository:
+## ▍$ ./setup.sh
 
 ```bash
-git clone https://github.com/yourusername/bachelors-portal-netherlands.git
-cd bachelors-portal-netherlands
-Install dependencies:
-
-Bash
+# requires node 22 lts · npm 10+
+git clone https://github.com/mhjahed/bachelors-studyportal-nl.git
+cd bachelors-studyportal-nl
 
 npm install
-Create your environment file:
+cp .env.example .env        # fill in below, then:
+npm run dev                 # → http://localhost:5173
+npm run build               # → dist/  (deploy to any static host)
+```
 
-Bash
+**`.env`** — everything is environment-driven:
 
-cp .env.example .env
-Open .env and add your configuration (see the Configuration section below).
+```env
+# emailjs — registration + interview templates
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+VITE_EMAILJS_REGISTRATION_TEMPLATE=
+VITE_EMAILJS_INTERVIEW_TEMPLATE=
 
-Start the development server:
+# admin interface — disabled entirely if unset
+VITE_DEV_TOOLS_PASSPHRASE=
 
-Bash
+# optional external data source (default: /data inside the site)
+# VITE_REMOTE_DATA_URL=https://raw.githubusercontent.com/<user>/<repo>/main/data
+```
 
-npm run dev
-The portal will be available at http://localhost:5173.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-Production Build
-To create an optimised production build:
+## ▍$ ls public/data/     — 11 collections
 
-Bash
+| COLLECTION | HOLDS |
+|---|---|
+| `users.json` | student accounts, credentials, identity |
+| `interviews.json` | scheduled practice interviews (+ meet links) |
+| `interviewRequests.json` | pending booking requests |
+| `registrationRequests.json` | new account applications |
+| `results.json` | scores, feedback, draft/published |
+| `scorecards.json` | dynamic-criteria performance reports |
+| `notifications.json` | user-facing notifications |
+| `documents.json` | document catalogue + per-user status |
+| `blogs.json` | editorial articles |
+| `universities.json` | dutch university reference data |
+| `settings.json` | default preferences |
 
-npm run build
-The compiled output appears in dist/ and can be deployed to any static host.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-To preview the production build locally:
+## ▍$ cat publish.workflow
 
-Bash
+Admin edits live in the operator's LocalStorage until deliberately published:
 
-npm run preview
-Configuration
-All configuration is handled through environment variables in .env:
+```
+/dev-tools → data → "download publish bundle"  (pulls all 11 json files)
+            → copy into public/data/
+            → git commit && push
+            → host redeploys → live for every visitor
+```
 
-EmailJS Integration
-The portal uses EmailJS to send registration requests and interview bookings to the administrator. Only two templates are needed.
+Local admin work survives refreshes; the remote seed runs once per browser —
+no accidental data loss.
 
-env
+## ▍$ tree src/
 
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-VITE_EMAILJS_REGISTRATION_TEMPLATE=your_registration_template_id
-VITE_EMAILJS_INTERVIEW_TEMPLATE=your_interview_template_id
-See EMAILJS_SETUP.md for complete template setup instructions. If EmailJS is not configured, submissions are queued locally and retried automatically when configuration becomes available.
+```
+src/
+├── assets/scss/        design tokens, global styles
+├── components/         modal, dropdowns, state blocks
+├── context/            auth context
+├── hooks/              custom react hooks
+├── layouts/AppShell/   sidebar + header + main
+├── pages/              register · login · dashboard · bookinterview
+│                       upcoming · results · scorecard · documents
+│                       studyupdates · notifications · profile · settings
+│                       devtools (admin interface)
+├── services/           storage · data · admin · emailjs · remote fetch
+└── utils/              image compression · url normalisation
+```
 
-Developer Tools Access
-The admin interface at /dev-tools is protected by a passphrase. Set it in your .env file:
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=0:1a3a6b,50:e8820c,100:1a3a6b&height=3" alt="" />
 
-env
+## ▍$ cat honest-limitations.txt
 
-VITE_DEV_TOOLS_PASSPHRASE=your_secret_passphrase
-If this variable is not set, the developer tools are completely disabled.
+▸ user submissions exist in the submitter's browser — EmailJS alerts the admin, who creates the account manually
+▸ LocalStorage is convenience, not security — the passphrase gate is not auth
+▸ data changes require the manual publish workflow above
+▸ no real-time collaboration between users
 
-Remote Data Source (Optional)
-By default, the portal fetches JSON data from /data/ inside the deployed site. To source data from an external URL (such as a GitHub raw endpoint), override this:
+*At scale, swap the data layer for supabase / firebase / a custom api — most of the frontend survives unchanged.*
 
-env
+<br/>
 
-VITE_REMOTE_DATA_URL=https://raw.githubusercontent.com/username/repo/main/data
-Leave blank to use the standard public/data/ folder.
+<div align="center">
 
-Data Model
-The portal operates on eleven collections stored as JSON files:
+`design language: dutch clarity — restraint, function, beauty` · fonts: poppins (ofl) · georgia · icons: boxicons (mit)
+`built end-to-end by` **[MH JAHED](https://github.com/mhjahed)** · `mhjahed@proton.me`
 
-Collection	Purpose
-users.json	Student accounts with credentials and identity information
-interviews.json	Scheduled practice interviews with Google Meet links
-interviewRequests.json	Pending interview booking requests
-registrationRequests.json	New account applications awaiting approval
-results.json	Interview results with scores and feedback
-scorecards.json	Detailed performance scorecards with dynamic criteria
-notifications.json	User-facing portal notifications
-documents.json	Document catalogue and per-user preparation status
-blogs.json	Editorial articles on Netherlands study topics
-universities.json	Dutch university reference data
-settings.json	Default user preferences
-Each file follows a consistent structure with a dataVersion field for future schema migrations.
+</div>
 
-Administrative Interface
-A comprehensive administrative interface is available at /dev-tools for managing every aspect of the portal.
-
-Available management sections
-Users — Create, edit, view credentials, suspend, and activate student accounts. New accounts receive auto-generated usernames and passwords ready to share with students.
-
-Requests — Two tabs for the two request types:
-
-Registration requests submitted by prospective students
-Interview booking requests from existing students
-Approving a registration request instantly creates an active account. Approving an interview request opens the scheduling form.
-
-Interviews — Schedule new practice interviews or manage existing ones. Each interview requires a Google Meet link (created separately at meet.google.com), a date, time, duration, interviewer name, and optional instructions. Students are automatically notified when interviews are scheduled.
-
-Results — Create interview results with scores, feedback, and recommendations. Results can be saved as drafts (hidden from students) or published (visible with automatic notification). Grades are computed automatically from percentage scores.
-
-Scorecards — Build detailed performance reports with fully dynamic criteria. Add any number of assessment criteria per scorecard, each with individual scores, maximum values, and feedback. Include recognised strengths, areas for growth, and overall panel comments.
-
-Notifications — Send custom notifications to any user or group of users. Notifications appear in the student's notification centre with optional action links.
-
-Documents — Read-only overview of every student's document preparation progress across all stages.
-
-Data Management — Publish changes to production by downloading the complete JSON bundle. Also supports full backups, imports from previous backups, and safe collection resets.
-
-Publishing workflow
-When you make administrative changes, they exist only in your browser's LocalStorage. To publish them so all users can see:
-
-Open Developer Tools at /dev-tools
-Navigate to the Data section
-Click Download publish bundle — eleven JSON files download to your computer
-Copy the downloaded files into your project's public/data/ folder
-Commit and push to your Git repository
-Your hosting provider redeploys automatically
-All visitors see the update on their next page load
-Administrative work is preserved across page refreshes. The remote seed only runs on first visit to a browser, ensuring no accidental data loss.
-
-Deployment
-The portal is designed for deployment to any static hosting provider. Recommended:
-
-Netlify — Automatic deploys from GitHub, generous free tier
-Vercel — Similar workflow, excellent performance
-Cloudflare Pages — Fast global CDN
-General deployment process
-Push your repository to GitHub
-Connect your hosting provider to the repository
-Configure build settings:
-Build command: npm run build
-Publish directory: dist
-Add environment variables in the hosting provider's dashboard (same variables as .env)
-Deploy
-Client-side routing is handled through a rewrite rule directing all requests to index.html. Most modern hosts detect Vite projects and configure this automatically.
-
-Development Approach
-The application was built in strict phases, with each phase tested and locked before proceeding to the next. This structured approach kept the codebase manageable and prevented interdependent breakage.
-
-Phase summary
-Phase	Focus
-4	Registration system
-5	Authentication and sessions
-6	Application shell (sidebar, header, mobile navigation)
-7	Student dashboard
-8	Interview booking (three wizards for University, IND, Embassy)
-9	EmailJS integration with retry queue
-10	Upcoming interviews with live countdown
-11	Results with visibility controls
-12	Detailed scorecards with dynamic criteria
-13	Interactive document checklist
-14	Study updates and editorial content
-15	Notification centre
-16	Student profile
-17	User settings
-18	Loading, error, empty, and success states
-19	Popups and contextual guidance
-20	Comprehensive responsive design
-22	Accessibility improvements
-23	Administrative interface
-24	Remote data system with publish workflow
-Limitations
-Being a frontend-only application, certain constraints are inherent to the architecture:
-
-User-generated data (registrations, interview requests) exists only in the submitting user's browser. EmailJS notifications alert the administrator, who then adds the user manually through the admin interface.
-LocalStorage is not real authentication or authorisation. The admin passphrase gate is convenience, not security.
-Data changes require a manual publish step (download JSON, commit to repository, redeploy).
-The application does not support real-time collaboration between users.
-For production deployment at scale, integration with a real backend (Supabase, Firebase, or a custom API) would address these constraints while allowing most of the existing frontend code to remain unchanged.
-
-Design Credits
-The visual language draws inspiration from Dutch design traditions — clarity, restraint, and functional beauty. Colour choices reference the Dutch national palette without literal use. Editorial photography sources are attributed where relevant within the interface.
-
-Fonts used:
-
-Poppins — Google Fonts, Open Font License
-Georgia — System serif fallback
-Icons via Boxicons — MIT License.
-
-License
-This project is provided as-is for educational and portfolio purposes.
-
-Contact
-For questions, suggestions, or collaboration inquiries, open an issue in this repository or reach out through the channels listed in the project owner's GitHub profile.
-
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:e8820c,100:1a3a6b&height=110&section=footer" alt="" />
